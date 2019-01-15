@@ -1,8 +1,10 @@
 ﻿<Application x:Class="Application.Views.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:viewmodels="clr-namespace:Application.ViewModels"
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
-         
+        <viewmodels:MainWindowViewModel x:Key="MainWindowViewModel" />
+        <viewmodels:FirstViewModel x:Key="FirstViewModel" />
     </Application.Resources>
 </Application>

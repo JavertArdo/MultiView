@@ -21,7 +21,19 @@ namespace Application.ViewModels
 
         public MainWindowViewModel()
         {
+            ViewModels = new ObservableCollection<ViewModelStruct>()
+            {
+                new ViewModelStruct()
+                {
+                    Properties = new ViewModelProperties()
+                    {
+                        Title = "First"
+                    },
+                    ViewModel = new FirstViewModel()
+                }
+            };
 
+            SelectedIndex = 0;
         }
     }
 }

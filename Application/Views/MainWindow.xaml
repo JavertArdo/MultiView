@@ -6,14 +6,17 @@
         xmlns:views="clr-namespace:Application.Views"
         xmlns:viewmodels="clr-namespace:Application.ViewModels"
         mc:Ignorable="d"
+        DataContext="{StaticResource MainWindowViewModel}"
         MinWidth="1100" MinHeight="650"
         Width="1100" Height="650"
         MaxWidth="1100" MaxHeight="650"
-        Title="{Binding}">
+        Title="{Binding SelectedViewModel.Properties.Title}">
     <Window.Resources>
-        
+        <DataTemplate DataType="{x:Type viewmodels:FirstViewModel}">
+            <views:FirstForm />
+        </DataTemplate>
     </Window.Resources>
     <Grid>
-        
+        <ContentControl Content="{Binding Path=SelectedViewModel.ViewModel, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
     </Grid>
 </Window>
