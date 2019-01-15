@@ -1,6 +1,6 @@
 ﻿using WindowsApplication = System.Windows.Application;
 
-namespace MultiView.Views
+namespace Application.Views
 {
     public partial class App : WindowsApplication
     {
