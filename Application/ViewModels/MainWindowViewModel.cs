@@ -19,7 +19,7 @@ namespace Application.ViewModels
             }
         }
 
-        public MainWindowViewModel()
+        public MainWindowViewModel() : base(null)
         {
             ViewModels = new ObservableCollection<ViewModelStruct>()
             {
@@ -29,7 +29,7 @@ namespace Application.ViewModels
                     {
                         Title = "First"
                     },
-                    ViewModel = new FirstViewModel()
+                    ViewModel = new FirstViewModel(this)
                 }
             };
 
