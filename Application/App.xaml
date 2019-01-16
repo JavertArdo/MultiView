@@ -6,5 +6,6 @@
     <Application.Resources>
         <viewmodels:MainWindowViewModel x:Key="MainWindowViewModel" />
         <viewmodels:FirstViewModel x:Key="FirstViewModel" />
+        <viewmodels:SecondViewModel x:Key="SecondViewModel" />
     </Application.Resources>
 </Application>

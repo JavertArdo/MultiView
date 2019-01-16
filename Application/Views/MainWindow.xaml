@@ -15,8 +15,39 @@
         <DataTemplate DataType="{x:Type viewmodels:FirstViewModel}">
             <views:FirstForm />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:SecondViewModel}">
+            <views:SecondForm />
+        </DataTemplate>
     </Window.Resources>
     <Grid>
-        <ContentControl Content="{Binding Path=SelectedViewModel.ViewModel, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+        <ContentControl Content="{Binding Path=SelectedViewModel.ViewModel, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+            <ContentControl.RenderTransform>
+                <TranslateTransform />
+            </ContentControl.RenderTransform>
+            <ContentControl.Style>
+                <Style TargetType="ContentControl">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ContentChanged, UpdateSourceTrigger=PropertyChanged}" Value="True">
+                            <DataTrigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:1.0">
+                                            <DoubleAnimation.EasingFunction>
+                                                <SineEase />
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.Y" From="650" To="0" Duration="0:0:1.0">
+                                            <DoubleAnimation.EasingFunction>
+                                                <SineEase />
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </DataTrigger.EnterActions>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ContentControl.Style>
+        </ContentControl>
     </Grid>
 </Window>
