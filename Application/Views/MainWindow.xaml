@@ -19,7 +19,7 @@
             <views:SecondForm />
         </DataTemplate>
     </Window.Resources>
-    <Grid>
+    <Grid Background="#1b1b1b">
         <ContentControl Content="{Binding Path=SelectedViewModel.ViewModel, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
             <ContentControl.RenderTransform>
                 <TranslateTransform />
@@ -36,7 +36,7 @@
                                                 <SineEase />
                                             </DoubleAnimation.EasingFunction>
                                         </DoubleAnimation>
-                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.Y" From="650" To="0" Duration="0:0:1.0">
+                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.X" From="1100" To="0" Duration="0:0:1.0">
                                             <DoubleAnimation.EasingFunction>
                                                 <SineEase />
                                             </DoubleAnimation.EasingFunction>
